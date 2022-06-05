@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body ,html{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    background-color: white;
+    height: 100%;
+}
+
+.container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-login{
+    height: 700px;
+    width: 530px;
+    border-radius: 20px;
+    padding: 0 35px;
+    background-color: #458DD0;
+}
+
+.logo{
+    height: 80px;
+    width: 80px;
+    margin-left: 40%;
+    margin-top: 25px;
+    color: white;
+}
+
+.mt-6{
+    margin-top: 65px;
+}
+
+.form-input{
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+    width: 321px;
+    font-size: 16px;
+    margin-left: 15%;
+    font-family: 'Poppins', 'FontAwesome', sans-serif;
+    text-align: center;
+    align-items: center;
+}
+
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+.icon{
+    margin-top: 10%;
+    margin-left: 15%;
+    font-size: 24px;
+}
+
+.btn-login{
+    border-radius: 20px;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+.btn-regist{
+    border-radius: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mb-10{
+    margin-bottom: 102px;
+}
+
+.mt-10{
+    margin-top: 40px;
+}
+
+.mb-8{
+    margin-bottom: 30px;
+}
+.mb-9{
+    margin-bottom: 60px;
+}
