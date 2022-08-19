@@ -144,7 +144,12 @@ class ContentController extends Controller
             'stock' => 'required',
             'brand' => 'required',
             'productcode' => 'required',
+            'image' => 'image|file|max:2048',
         ]);
+
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('goods-images');
+        }
 
         Goods::where('id', $goods->id)->update($validatedData);
 
@@ -344,6 +349,7 @@ class ContentController extends Controller
 
     public function userdelete(User $user){
         User::destroy($user->id);
+        Loans::where('user_id', $user->id)->delete();
 
         return redirect('/user/lihat')->with('success', 'Data berhasil dihapus!');
     }

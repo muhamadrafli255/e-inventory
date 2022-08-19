@@ -44,7 +44,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                          <h6 class="modal-title text-dark">Apakah anda yakin akan menghapus? </h6>
+                          <h6 class="modal-title text-dark">Apakah anda yakin akan menghapus?</h6>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
@@ -62,17 +62,48 @@
                                     </div>
                                   </div>
                                 <div class="modal-footer">
-                                    <form action="/user/hapus/{{ $user->id }}" method="POST">
-                                      @method('delete')
-                                      @csrf
-                                      <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Yakin!</button>
-                                    </form>
+
+                                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalConfirm{{ $user->id }}">Yakin!</button>
+                                    
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                             </div>
                         </div>
                     </div>
                     </div>
               {{-- End Modal Delete --}}
+
+                                                            {{-- Modal Confirm Delete --}}
+                                                            <div class="modal fade" tabindex="-1"
+                                                            id="modalConfirm{{ $user->id }}">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Silahkan
+                                                                            Konfirmasi</h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>Dengan Menghapus Akun Ini Semua Data
+                                                                            Histori Peminjaman Akan Hilang,
+                                                                            Silahkan Backup Terlebih Dahulu!</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <a href="/user/hapus"><button type="button"
+                                                                            class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal" aria-label="close">Batal</button></a>
+                                                                            <form action="/user/hapus/{{ $user->id }}" method="POST">
+                                                                              @method('delete')
+                                                                              @csrf
+                                                                        <button type="submit"
+                                                                            class="btn btn-danger">Konfirmasi</button>
+                                                                          </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- End Modal Confirm Delete --}}
               </tr>
               @endforeach
             </tbody>

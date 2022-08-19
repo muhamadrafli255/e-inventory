@@ -7,7 +7,7 @@
     <h2 class="text-me ml-5">{{ $title }}</h2>
     <h6 class="text-secondary ml-5 mb-4">Silahkan ganti data dengan data yang baru!</h6>
 </div>
-<form action="/barang/edit/{{ $goods->id }}" method="POST">
+<form action="/barang/edit/{{ $goods->id }}" method="POST" enctype="multipart/form-data">
     @method('put')
     @csrf
     <div class="container rounded bg-white ml-5 mt-5 mb-5 ml-5 col-11 border border-primary">
